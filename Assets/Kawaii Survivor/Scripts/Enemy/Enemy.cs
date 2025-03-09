@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 
 [RequireComponent(typeof(EnemyMovement))]
@@ -10,6 +11,12 @@ public class Enemy : MonoBehaviour
 
     [Header("Components")]
     private EnemyMovement movement;
+
+
+    [Header("Health")]
+    [SerializeField] private int maxHealth;
+    private int health;
+    [SerializeField] private TextMeshPro healthText;
 
     [Header("Elements")]
     private Player player;
@@ -37,6 +44,9 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        health = maxHealth;
+        healthText.text = health.ToString();
+
         movement = GetComponent<EnemyMovement>();
 
         player = FindFirstObjectByType<Player>();
@@ -104,6 +114,17 @@ public class Enemy : MonoBehaviour
                 attckTimer = 0;
         player.TakeDamage(damage);
     }
+
+    public void TakeDamage(int damage)
+    {
+        int realDamage = Mathf.Min(damage, health);
+        health -= realDamage;
+
+        healthText.text = health.ToString();
+
+        if (health <= 0)
+            PassAway();
+    }
     private void PassAway()
     {
         // Unparent the particles & play them
@@ -119,5 +140,7 @@ public class Enemy : MonoBehaviour
 
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, playerDetectionRadiusd);
+
+        
     }
 }
