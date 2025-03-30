@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 public class PlayerHealth : MonoBehaviour
 {
 
@@ -14,6 +15,9 @@ public class PlayerHealth : MonoBehaviour
     [Header("Elements")]
     [SerializeField] private Slider healthSliders;
     [SerializeField] private TextMeshProUGUI healthText;
+
+    [Header(" Actions ")]
+    public static Action<Vector2> onAttackDodged;
 
 
     // Start is called before the first frame update
@@ -47,9 +51,9 @@ public class PlayerHealth : MonoBehaviour
     }
     private void UpdateUI()
     {
-        float healthBarvalue = (float)health / maxHealth;
+        float healthBarvalue = health / maxHealth;
         healthSliders.value = healthBarvalue;
-        healthText.text = health + "/" + maxHealth;
+        healthText.text = (int)health + "/" + maxHealth;
     }
 }
     

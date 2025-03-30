@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 {
 
     [Header("Components")]
+    [SerializeField] private Collider2D collider;
     private PlayerHealth playerHealth;
 
 
@@ -33,4 +34,8 @@ public class Player : MonoBehaviour
         playerHealth.TakeDamage(damage);
     }
        
+    public Vector2 GetCenter()
+    {
+        return (Vector2)transform.position + collider.offset;
+    }
 }
