@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3835235143381640009}
   - component: {fileID: 7781220779797964909}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spawm Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 1
+  m_SpriteSortPoint: 0
 --- !u!1 &2247940812971808720
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 4647983101200859644}
   - component: {fileID: 98245401920741496}
   - component: {fileID: 7866374356087898868}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pass Away Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5169,7 +5169,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3387598901123167494
 Transform:
   m_ObjectHideFlags: 0
@@ -5206,10 +5206,10 @@ MonoBehaviour:
   spawnIndicator: {fileID: 7781220779797964909}
   collider: {fileID: 7535485353287343138}
   passAwayParticles: {fileID: 98245401920741496}
-  damage: 1
-  attackFreqwency: 1
   playerDetectionRadius: 0
   gizmos: 1
+  damage: 1
+  attackFreqwency: 1
 --- !u!114 &917001661227829171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5269,7 +5269,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3971310278731310311}
   - component: {fileID: 2075125502266444631}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy Renderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}

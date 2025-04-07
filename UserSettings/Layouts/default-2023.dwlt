@@ -555,7 +555,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 73
+    y: 19
     width: 732
     height: 844
   m_SerializedDataModeController:
@@ -572,7 +572,7 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: d8a90000
+      m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: e672fffff8f9ffff86faffffcefafffff2fafffff4fafffff4ffffff3ea800006aa800008ca80000baa80000eaa8000030a90000
       m_RenameOverlay:
@@ -620,8 +620,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 733
-    y: 73
+    x: 734
+    y: 19
     width: 809
     height: 844
   m_SerializedDataModeController:
@@ -670,7 +670,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 938
+    y: 19
     width: 540
     height: 413
   m_SerializedDataModeController:
@@ -714,7 +714,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 43}
     m_SelectedIDs: eecf0000
     m_LastClickedID: 53230
-    m_ExpandedIDs: 00000000c8aa0000caaa0000ccaa00005aab00005cab000000ca9a3b
+    m_ExpandedIDs: 00000000ccaa0000ceaa0000d0aa0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -743,7 +743,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c8aa0000caaa0000ccaa0000
+    m_ExpandedIDs: 00000000ccaa0000ceaa0000d0aa0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -822,8 +822,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Console\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 541
-    y: 938
+    x: 542
+    y: 19
     width: 1001
     height: 413
   m_SerializedDataModeController:
@@ -858,8 +858,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1544
-    y: 73
+    x: 1
+    y: 19
     width: 1015
     height: 735
   m_SerializedDataModeController:
@@ -1544,8 +1544,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Simulator\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1544
-    y: 829
+    x: 1
+    y: 775
     width: 1015
     height: 522
   m_SerializedDataModeController:
@@ -1575,7 +1575,7 @@ MonoBehaviour:
   m_UseMipMap: 0
   m_SimulatorState:
     controlPanelVisible: 0
-    controlPanelWidth: 0
+    controlPanelWidth: NaN
     controlPanelFoldoutKeys:
     - UnityEditor.DeviceSimulation.ApplicationSettingsPlugin
     controlPanelFoldoutValues: 00
@@ -1583,7 +1583,7 @@ MonoBehaviour:
     - UnityEditor.DeviceSimulation.ApplicationSettingsPlugin
     pluginStates:
     - '{}'
-    scale: 34
+    scale: 10
     fitToScreenEnabled: 1
     rotationDegree: 270
     highlightSafeAreaEnabled: 0

@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5539140267539028937}
   - component: {fileID: 3271258593299869024}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spawm Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +302,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4630118188124159266}
   - component: {fileID: 2846863722474748975}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy Renderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -513,7 +513,7 @@ GameObject:
   - component: {fileID: 7489305884450755509}
   - component: {fileID: 6737264954827682656}
   - component: {fileID: 8909057772733633453}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pass Away Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
