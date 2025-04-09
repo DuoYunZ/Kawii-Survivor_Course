@@ -1,7 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+
 
 public abstract class Enemy : MonoBehaviour
 {
@@ -28,10 +29,12 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected float playerDetectionRadius;
 
     [Header("Actions")]
-    public static Action<int, Vector2> onDamageTaken;
+    public static Action<int, Vector2,bool> onDamageTaken;
+    public static Action<Vector2> onPassedAway;
 
     [Header("DEBUG")]
     [SerializeField] protected bool gizmos;
+
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -58,12 +61,10 @@ public abstract class Enemy : MonoBehaviour
     {
         SetRenderersVisibility(false);
 
-
         Vector3 targetScale = spawnIndicator.transform.localScale * 1.2f;
         LeanTween.scale(spawnIndicator.gameObject, targetScale, .3f)
             .setLoopPingPong(4)
             .setOnComplete(SpawnSequenceCompleted);
-
     }
     private void SpawnSequenceCompleted()
     {
@@ -79,20 +80,27 @@ public abstract class Enemy : MonoBehaviour
         renderer.enabled = visibility;
         spawnIndicator.enabled = !visibility;
     }
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, bool isCriticalHit)
     {
         int realDamage = Mathf.Min(damage, health);
         health -= realDamage;
 
-        onDamageTaken?.Invoke(damage, transform.position);
+        onDamageTaken?.Invoke(damage, transform.position, isCriticalHit);
 
         if (health <= 0)
             PassAway();
 
     }
-    private void PassAway()
+    public void PassAway()
+    {       
+        onPassedAway?.Invoke(transform.position);
+        PassAwayAfterWave();
+    }
+
+    public void PassAwayAfterWave()
     {
-        // Unparent the particles & play them
+        onPassedAway?.Invoke(transform.position);
+
         passAwayParticles.transform.SetParent(null);
         passAwayParticles.Play();
 
@@ -105,8 +113,5 @@ public abstract class Enemy : MonoBehaviour
 
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, playerDetectionRadius);
-
-
-
     }
 }

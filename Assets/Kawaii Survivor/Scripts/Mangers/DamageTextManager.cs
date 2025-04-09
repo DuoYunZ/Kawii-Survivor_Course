@@ -14,18 +14,19 @@ public class DamageTextManager : MonoBehaviour
 
     private void Awake()
     {       
-        PlayerHealth.onAttackDodged += AttackDodgedCallback;
+        Enemy.onDamageTaken += EnemyHitCallback;
     }
 
     private void OnDestroy()
     {
-        PlayerHealth.onAttackDodged -= AttackDodgedCallback;
+        Enemy.onDamageTaken -= EnemyHitCallback;
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Start()        
     {
-        damageTextPool = new ObjectPool<DamageText>(CreateFunction,ActionOnGet, ActionOnRelease, ActionOnDestroy);
+            damageTextPool = new ObjectPool<DamageText>(CreateFunction, ActionOnGet, ActionOnRelease, ActionOnDestroy);
+        
     }
 
     private DamageText CreateFunction()
